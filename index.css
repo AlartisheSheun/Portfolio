@@ -1,0 +1,511 @@
+* {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    list-style: none;
+  }
+  *, *:before, *:after {
+    box-sizing: border-box;}
+ ::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: grey;
+}
+
+  /* nav */
+  #nav {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    background: blue;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 5;
+    border-bottom: 5px solid grey;
+  }
+  
+  nav a {
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    margin: 0 15px;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+  }
+  nav a:hover {
+    color: grey;
+    border-bottom: 3px solid grey
+  }
+  #contact {
+   padding: 8px 8px;
+   background-color: white;
+   color: black;
+   border: 2px solid transparent;
+   border-radius: 8px;
+   font-size: 16px;
+   letter-spacing: 1px;
+   font-weight: 500;
+   transition: 0.3s ease; 
+  }
+  #contact:hover {
+  background-color: grey;
+  box-shadow: 0 0 50px grey;
+  color: white;
+  }
+
+  /* Home section */
+  .home {
+    display: flex;
+    width: 75%;
+    text-align: left;
+    padding: 30px 12% 0;
+    align-items: center;
+    background:url("sheundraw.jpg");
+   background-repeat:no-repeat;
+   background-size: cover;
+   gap: 4em;
+ }
+ .hello {
+ width: 100%; 
+ }
+ .hello h3{
+   font-size: 35px;
+ }
+ .hello h1 {
+   font-size: 55px;
+   line-height: 1.0;
+ }
+ 
+ #emphasis {
+   color: blue;
+ }
+ .hello p {
+     padding-top:20px;
+     padding-bottom:40px;
+     text-align: left;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 30px;
+     font-weight: 600;
+ }
+ .container {
+ width: 345px;
+ display: flex;
+ gap: 4em;
+ }
+ 
+ .container-1{
+ margin-left: 50px;
+ margin-bottom: 10px;
+ padding: auto;
+ background-color: grey;
+ color: white;
+ border: 2px solid transparent;
+ border-radius: 20px;
+ font-size: 20px;
+ letter-spacing: 1px;
+ font-weight: 500;
+ transition: 0.3s ease;
+ cursor: pointer;
+ }
+ 
+ .container-1:hover{
+   background-color: white;
+   color: black;
+   border: 2px solid grey;
+ }
+ 
+ .container-2{
+ margin-bottom: 10px;
+ padding: auto;
+ background-color: grey;
+ color: white;
+ border: 2px solid transparent;
+ border-radius: 20px;
+ font-size: 20px;
+ letter-spacing: 1px;
+ font-weight: 500;
+ transition: 0.3s ease;
+ cursor: pointer;
+ }
+ 
+ .container-2:hover{
+ background-color: white;
+ color: black;
+ border: 2px solid grey;
+ }
+
+ .image {
+   min-width: 50%;
+   max-width: 50%;
+   height: 50%;
+   border-radius: 5%;
+ }
+ .image img{
+   margin-left: 250%;
+   border-radius: 5%;
+   max-width: 80%;
+   margin-top: 0;
+   margin-bottom: 20px;
+   margin-right: 0;
+   border: 5px solid grey;
+   box-shadow: 0 0 200px white,
+               0 0 200px white;
+ }
+ 
+ /*Skills section*/
+ .skills{
+    width: 100%;
+    min-height: 100%;
+    text-align: center;
+    padding: 30px 12% 0;
+    background-color: grey;
+    border-bottom: 5px solid #f4007a;
+    border-top: 10px solid blue;
+ }
+ .skill-head h1{
+    font-size: 60px;
+   line-height: 1.2;
+   color: white;
+ }
+ .skitext{
+     padding-top: 20px;
+     padding-bottom: 40px;
+     text-align: justify;
+     color: black;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 22px;
+ }
+ #phasis {
+ color: blue;  
+ }
+ .skills .row{
+     margin: 1 0;
+ }
+ .skills .item{
+     padding: 5px 0;
+     margin: 3px 0;
+ }
+ .skills .itemize{
+     display: flex;
+     justify-content: space-between;
+     font-weight: 600;
+     font-size: 1.3rem;
+     position: relative;
+ }
+ #tags{
+ color: white;
+   margin-bottom: 5px;
+ }
+ .itemize .bar-a {
+     margin-left: 65%;
+     color: white;
+ }
+ .itemize .bar-b{
+     margin-left: 60%;
+     color: white;
+ }
+ .itemize .bar-c {
+     margin-left: 85%;
+     color: white;
+ }
+ .itemize .bar-d{
+     margin-left: 70%;
+     color: white;
+ }
+ .itemize .bar-e{
+     margin-left: 30%;
+     color: white;
+ }
+ .itemize .bar-f{
+     margin-left: 22%;
+     color: white;
+ }
+ .progress{
+     border-radius: 10px;
+     margin-bottom: 2rem;
+     height: 10px;
+     width: 100%;
+     background-color: white;
+     overflow: hidden;
+ }
+ .progress-bar{
+     box-shadow: 0 0 50px;
+     border-top-right-radius: 2px;
+     border-bottom-right-radius: 2px;
+     color: white;
+     font-size: 11px;
+ }
+ .progress-bar.bar-a{
+     width: 70%;
+     background: rgb(0, 0, 230); /* Bright blue for 70% */
+ }
+ .progress-bar.bar-b{
+     width: 60%;
+     background: rgb(0, 0, 200); /* Slightly less bright for 60% */
+ }
+ .progress-bar.bar-c{
+     width: 85%;
+     background: rgb(0, 0, 255); /* Full bright blue for highest percentage */
+ }
+ .progress-bar.bar-d{
+     width: 70%;
+     background: rgb(0, 0, 230); /* Bright blue for 70% */
+ }
+ .progress-bar.bar-e{
+     width: 75%;
+     background: rgb(0, 0, 240); /* Brighter blue for 75% */
+ }
+ .progress-bar.bar-f{
+     width: 65%;
+     background: rgb(0, 0, 220); /* Moderate bright blue for 65% */
+ }
+ .progress{
+   box-shadow: 0 0 50px white;
+ }
+.soft-skills-box {
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(44, 62, 80, 0.85);
+    border-radius: 10px;
+    max-width: 350px;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.soft-skills-box h3 {
+    margin-bottom: 12px;
+    color: #fff;
+}
+.soft-skills-list {
+    list-style: none;
+    padding-left: 0;
+}
+.soft-skills-list li {
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 18px;
+}
+.list{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;  
+    text-align: left;
+    font-weight: 500;
+}
+.list li {
+  margin: 16px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 0.5rem;
+  color: white;
+  list-style: none;
+}
+ .fa-duotone {
+    margin-right: 20px;
+    color: blue;
+    font-size: 20px;
+ }
+
+ /* Projects section */
+ .pro {
+   text-align: center;
+   padding: 2rem;
+   background: grey;
+   border-bottom: 2px solid #f4007a;
+ }
+ .pro-header {
+   max-width: 600px;
+   margin-bottom: 40px;
+   padding-top: 20px;
+   font-size: 30px;
+   line-height: 1.2;
+   color: white;
+ }
+ .pro-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 40% 40%;
+  grid-gap: 2rem;
+  margin-left: 0;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  padding: 2rem;
+ }
+ .proj-img{
+    transform: scale(0.8);
+    object-fit: cover;
+    width: 60%;
+    height: 60%;
+    border-radius: 20px;
+ }
+ .pro-img:hover{
+    border-radius: 20px;
+   box-shadow: 0 0 50px blue,
+               0 0 50px blue;
+ }
+ .pro-name {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 16px;
+   text-decoration: none;
+   color: white;
+ }
+ .code {
+   color:rgb(185, 27, 53);
+   transition: 0.3s ease;
+ }
+ .pro-name:hover {
+   text-shadow: 0 0 50px blue,
+                0 0 100px red;
+ }
+ .more {
+ width: 120px;
+ height: 25px;
+ background-color: white;
+ color: blue;
+ border: 2px solid transparent;
+ border-radius: 8px;
+ font-size: 18px;
+ font-weight: 600;
+ transition: 0.3s ease;
+ cursor: pointer;
+ margin-top: 20px;
+ }
+
+ .more:hover{
+ background-color: blue;
+ box-shadow: 0 0 50px blue;
+ color: white;
+ }
+
+ /* Contact section */
+ .cont {
+    text-align: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 1rem;
+    background-image:url("sheundraw.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-bottom: none;
+  }
+  .cont-head h1 {
+    font-size: 50px;
+    line-height: 1.2;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .cont-head p {
+   padding-top: 20px;
+   padding-bottom: 30px;
+   text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 25px;
+   font-weight: 500; 
+  }
+  .cont-form form {
+    max-width: 50em;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 2em;
+  }
+  .cont-form form .input-box{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    
+  }
+  .cont-form form .input-box input, 
+  .cont-form form textarea{
+    width: 100%;
+    padding: 1em;
+    font-size: 15px;
+    color: blue;
+    background: rgb(241,241,241);
+    border-radius: 20px;
+    margin: 1rem 0;
+    resize: none;
+    border-color: blue;
+  }
+  .submit {
+   margin-bottom: 10px;
+   padding: 10px 28px;
+   background-color: white;
+   color: blue;
+   border: 2px solid blue;
+   border-radius: 20px;
+   font-size: 15px;
+   letter-spacing: 1px;
+   font-weight: 500;
+   transition: 0.3s ease; 
+  }  
+  .submit:hover{
+  background-color: blue;
+  box-shadow: 0 0 50px white,
+              0 0 100px blue;
+  color: white;
+  }
+
+  /*footer*/
+  .footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 30px 0;
+    background: black;
+  }
+  .footer .media{
+  text-align: center;
+  padding-bottom: 25px;
+  color: white;
+  }
+  .media a i{
+    font-size: 25px;
+    color: white;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    display: inline block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 15px;
+    box-shadow: inset 0 0 30px blue, 0 0 30px white;
+    transition: 0.3s ease;
+  }
+  .media a i:hover{
+    transform: scale(1.2) translate(-15px);
+    color: white;
+    border: 2px solid blue;
+  }
+  .footer ul {
+  margin-top: 10px;
+  padding: 0;
+  margin-bottom: 0;
+  text-align: center;
+  }
+  .footer ul li a {
+    color: white;
+    font-size: 15px;
+   line-height: 1.2;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s ease;
+  }
+  .footer ul li a:hover {
+    border-bottom: 3px solid blue;
+  }
+  .footer ul li{
+    display: inline-block;
+    padding: 0 15px;
+  }
+  .footer .copyright{
+    margin-top: 25px;
+    margin-right: 50px;
+    text-align: right;
+    font-size: 12px;
+    color: blue; 
+  }

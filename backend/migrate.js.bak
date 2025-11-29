@@ -1,0 +1,105 @@
+const mysql = require('mysql2');
+const migration = require('mysql-migrations');
+const path = require('path');
+require('dotenv').config();
+
+// Database configuration
+const config = {
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT || 23139,
+    ssl: process.env.DB_CA_CERT ? {
+        rejectUnauthorized: true,
+        ca: Buffer.from(process.env.DB_CA_CERT, 'base64').toString('ascii')
+    } : undefined
+};
+
+console.log('Connecting to database...');
+console.log('Host:', config.host);
+console.log('Port:', config.port);
+
+const connection = mysql.createConnection(config);
+
+// Test connection and run migrations
+connection.connect((err) => {
+    if (err) {
+        console.error('Database connection failed:', err);
+        process.exit(1);
+    }
+    
+    console.log('Connected to database successfully');
+    
+    migration.init(connection, path.resolve(__dirname, './migrations'), function() {
+        console.log('Finished running migrations');
+        connection.end(() => process.exit(0));
+    });
+});
+    const config = {
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        port: process.env.DB_PORT || 23139,
+        ssl: process.env.DB_CA_CERT ? {
+            rejectUnauthorized: true,
+            ca: Buffer.from(process.env.DB_CA_CERT, 'base64').toString('ascii')
+        } : undefined,
+        multipleStatements: true,
+        connectTimeout: 20000, // 20 second timeout
+        acquireTimeout: 20000,
+        enableKeepAlive: true,
+        keepAliveInitialDelay: 10000,
+        maxIdle: 10, // max idle connections, the default is the same as `connectionLimit`
+        idleTimeout: 60000, // idle connections timeout, in milliseconds
+        connectionLimit: 5,
+        queueLimit: 0
+    };
+
+    console.log('Attempting to connect to database...');
+    console.log('Using host:', config.host);
+    console.log('Using port:', config.port);
+    
+    const connection = mysql.createPool(config);
+    
+    // Function to attempt connection with retries
+    const attemptConnection = (retries = 3) => new Promise((resolve, reject) => {
+        if (retries === 0) {
+            return reject(new Error('Max retries reached'));
+        }
+
+                if (err) {
+                console.error(`Connection attempt ${4 - retries} failed:`, err);
+                conn?.release();
+                setTimeout(() => {
+                    attemptConnection(retries - 1).then(resolve).catch(reject);
+                }, 5000); // Wait 5 seconds before retrying
+                return;
+            }
+            if (conn) {
+                console.log('Successfully connected to database');
+                conn.release();
+                resolve(connection);
+            }
+        });
+    });
+
+    try {
+        const conn = await attemptConnection();
+        // Initialize migrations after successful connection
+        migration.init(conn, path.resolve(__dirname, './migrations'), function() {
+            console.log("Finished running migrations");
+            process.exit(0);
+        });
+    } catch (error) {
+        console.error('Failed to connect after all retries:', error);
+        process.exit(1);
+    }
+};
+
+// Attempt to create connection
+createConnection().catch(err => {
+    console.error('Fatal error:', err);
+    process.exit(1);
+});
