@@ -1,18 +1,19 @@
 {
   "version": 2,
-  "functions": {
-    "api/*.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/(.*)", "destination": "/index.html" }
+  "builds": [
+    { "src": "api/*.js", "use": "@vercel/node" },
+    { "src": "idex.html", "use": "@vercel/static" },
+    { "src": "index.css", "use": "@vercel/static" },
+    { "src": "script.js", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/(.+)\\.(js|css|jpg|png|gif|ico|svg|eot|otf|ttf|woff|woff2)$", "dest": "/$1" },
+    { "src": "/", "dest": "/idex.html" },
+    { "src": "/(.*)", "dest": "/idex.html" }
   ],
   "env": {
     "DATABASE_URL": "@database_url",
     "NODE_ENV": "production"
-  },
-  "buildCommand": "npm install",
-  "outputDirectory": "."
+  }
 }
