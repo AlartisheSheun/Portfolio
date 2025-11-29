@@ -11,9 +11,5 @@
     { "src": "/(.+)\\.(js|css|jpg|png|gif|ico|svg|eot|otf|ttf|woff|woff2)$", "dest": "/$1" },
     { "src": "/", "dest": "/index.html" },
     { "src": "/(.*)", "dest": "/index.html" }
-  ],
-  "env": {
-    "DATABASE_URL": "@database_url",
-    "NODE_ENV": "production"
-  }
+  ]
 }
