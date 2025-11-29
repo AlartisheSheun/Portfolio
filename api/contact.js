@@ -23,7 +23,10 @@ module.exports = async (req, res) => {
       database: process.env.DB_NAME,
       port: process.env.DB_PORT ? Number(process.env.DB_PORT) : undefined,
       ssl: process.env.DB_CA_CERT
-        ? { ca: Buffer.from(process.env.DB_CA_CERT, 'base64').toString('ascii') }
+        ? {
+            ca: Buffer.from(process.env.DB_CA_CERT, 'base64').toString('ascii'),
+            rejectUnauthorized: false,
+          }
         : undefined,
     });
 
